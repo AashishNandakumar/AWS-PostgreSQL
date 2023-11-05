@@ -23,11 +23,11 @@ print(f"PWD: {password}")
 
 
 ''' #! If I directly include the credentials it works
-hostname = "database-1.c3ftvimis5ya.us-east-1.rds.amazonaws.com"
+hostname = "ur_endpoint"
 port = "5432"
-username = "postgres"
-password = "14zklDX3zZ"
-database = "postgres"
+username = "ur_username"
+password = "ur_pwd"
+database = "ur_database"
 '''
 
 try:
