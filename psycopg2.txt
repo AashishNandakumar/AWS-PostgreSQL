@@ -1,0 +1,18 @@
+1. First, you need to install the "psycopg2" package, which is a PostgreSQL adapter for Python. It is the most popular PostgreSQL database adapter for the Python programming language
+
+-> pip install psycopg2-binary
+The -binary version includes pre-built binaries for the package so you don't need to build it from source.
+
+2. Gather Your Database Credentials
+    Before you can connect to your AWS RDS PostgreSQL instance, you need the following details:
+
+    Hostname (Endpoint of the RDS instance)
+    Port (Usually 5432 for PostgreSQL)
+    Database name
+    Username
+    Password
+
+    After u have collected these details, paste them into .env file
+        -> pip install python-dotenv  (to deal with .env files)
+    Then access the credentials from .env file (it is a good practice)
+    The reason to put it into a .env file is bcoz i can add this into .gitignore so the credentials won't be pushed to the codebase
