@@ -45,7 +45,7 @@ PASSWORD=your_database_password
 DATABASE=your_database_name
 ```
 
-### Installation
+### Usage
 
 The package contains several modules, each with functions related to specific roles:
 - `data_harvesters.py`: Functions to insert raw data into the source schema.
