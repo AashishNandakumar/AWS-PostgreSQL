@@ -14,15 +14,22 @@ username = os.getenv('USERNAME1')
 password = os.getenv('PASSWORD')
 database = os.getenv('DATABASE')
 
+
 #? To connect to the database
 def connect():
-    return psycopg2.connect(
-        host=hostname,
-        port=port,
-        user=username,
-        password=password,
-        dbname=database
-    )
+    try:
+        connection = psycopg2.connect(
+            host=hostname,
+            port=port,
+            user=username,
+            password=password,
+            dbname=database
+        )
+        return connection
+    except Exception as e:
+        print("Couldn't establish connection to the database")
+        print(e)
+
 
 #! Insert website data here
 def insert_website_data(data):
@@ -101,7 +108,7 @@ def insert_video_data(data):
     try:
         with conn.cursor() as cursor:
             insert_query = """
-            INSERT INTO Source.video (video_url, transcript) VALUES %s;
+            INSERT INTO "Source".video (video_url, transcript, downloaded_at) VALUES %s;
             """
             execute_values(cursor, insert_query, data)
         conn.commit()
@@ -133,3 +140,27 @@ def get_all_data_from_table(table_name):
         print(f"An error occured: {e}")
     finally:
         conn.close()
+
+
+#! For testing only
+
+'''
+print(f"Hostname: {hostname}")
+print(f"Port: {port}")
+print(f"Username: {username}")
+print(f"Database: {database}")
+print(f"PWD: {password}")
+'''
+
+'''
+print(get_all_data_from_table('\"Source\".video'))
+'''
+
+'''
+import datetime
+data = [
+        ('http://youtube.com/video1', 'Transcript of the first video', datetime.datetime.now()),
+        ('http://youtube.com/video2', 'Transcript of the second video', datetime.datetime.now()),
+    ]
+insert_video_data(data)
+'''
