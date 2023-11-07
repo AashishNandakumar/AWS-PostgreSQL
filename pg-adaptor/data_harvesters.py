@@ -7,6 +7,7 @@ import os  #? To interact with the OS and its functionalities
 env_path = 'D:/Coding-Applications/VS Code/VSC Code files/AWS-postgreSQL/.env'
 load_dotenv(dotenv_path=env_path)
 
+
 #? Load the environment variables into local variables 
 hostname = os.getenv('HOSTNAME1')
 port = os.getenv('PORT')
