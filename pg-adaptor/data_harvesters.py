@@ -54,7 +54,7 @@ def insert_website_data(data):
         #? A 'curosr' is a DB object used to retrieve, manipulate aand iterate through rows of a result set + also used to execute DB commands
         with conn.cursor() as cursor:  #? After this block, the 'cursor' resource will be closed automatically
             insert_query = """
-            INSERT INTO Source.website (url, raw_content, language) VALUES %s;  #? '%s' is a place holder, will be replaced by a tuple(from our list of tuples during runtime)
+            INSERT INTO "Source".website (url, raw_content, language) VALUES %s;  #? '%s' is a place holder, will be replaced by a tuple(from our list of tuples during runtime)
             """
             execute_values(cursor, insert_query, data)
         conn.commit()
@@ -81,7 +81,7 @@ def insert_e_newspaper_data(data):
     try:
         with conn.cursor() as cursor:
             insert_query = """
-            INSERT INTO Source.e-newspaper (image_path, raw_text, edition) VALUES %s;
+            INSERT INTO "Source".e-newspaper (image_path, raw_text, edition) VALUES %s;
             """
             execute_values(cursor, insert_query, data)
         conn.commit()
