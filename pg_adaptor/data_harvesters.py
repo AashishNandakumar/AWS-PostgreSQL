@@ -2,7 +2,9 @@ import psycopg2  #? Adaptor to interact with postgres server
 from psycopg2.extras import execute_values  #? An helper function designed to insert several rows in a single operation
 from dotenv import load_dotenv  #? A function to load .env files
 import os  #? To interact with the OS and its functionalities
+from pg_adaptor import connect
 
+'''
 #? Path where you .env file is present
 env_path = 'D:/Coding-Applications/VS Code/VSC Code files/AWS-postgreSQL/.env'
 load_dotenv(dotenv_path=env_path)
@@ -17,7 +19,7 @@ database = os.getenv('DATABASE')
 
 
 #? To connect to the database
-def connect():
+def connect1():
     try:
         connection = psycopg2.connect(
             host=hostname,
@@ -30,7 +32,7 @@ def connect():
     except Exception as e:
         print("Couldn't establish connection to the database")
         print(e)
-
+'''
 
 #! Insert website data here
 def insert_website_data(data):
