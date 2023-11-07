@@ -1,7 +1,5 @@
 import psycopg2  #? Adaptor to interact with postgres server
 from psycopg2.extras import execute_values  #? An helper function designed to insert several rows in a single operation
-from dotenv import load_dotenv  #? A function to load .env files
-import os  #? To interact with the OS and its functionalities
 from pg_adaptor import connect
 
 
