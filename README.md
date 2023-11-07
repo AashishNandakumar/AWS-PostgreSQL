@@ -89,4 +89,4 @@ If you have any questions, suggestions, or feedback, please don't hesitate to co
 
   
 ### License
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/AashishNandakumar/Power-Transfer-Optimization/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/AashishNandakumar/AWS-PostgreSQL/blob/main/LICENSE) file for details.
