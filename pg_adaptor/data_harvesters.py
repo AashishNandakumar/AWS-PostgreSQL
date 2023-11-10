@@ -120,6 +120,14 @@ def get_all_data_from_table(table_name):
         conn.close()
 
 
+#! <-- Add new Functions here -->
+
+
+
+
+#! <-- End new Functions -->
+
+
 #! For testing only
 
 '''
