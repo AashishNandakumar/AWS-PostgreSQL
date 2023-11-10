@@ -2,6 +2,12 @@ import psycopg2  #? Adaptor to interact with postgres server
 from psycopg2.extras import execute_values #? An helper function designed to insert several rows in a single operation
 from pg_adaptor import connect
 
+
+'''
+#? To execute this particular file type in the terminal(from the project's root directory):
+-> python -m pg_adaptor.data_alchemists
+'''
+
 #! Insert processed + analyzed website data
 def insert_processed_website_data(data):
     '''
@@ -125,3 +131,4 @@ processed_youtube_video_data = [
 ]
 insert_processed_video_data(processed_youtube_video_data)
 '''
+ 

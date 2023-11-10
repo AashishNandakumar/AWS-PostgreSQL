@@ -2,6 +2,10 @@ import psycopg2
 from psycopg2.extras import execute_values
 from pg_adaptor import connect
 
+'''
+#? To execute this particular file type in the terminal(from the project's root directory):
+-> python -m pg_adaptor.alert_dispatchers
+'''
 
 #! Insert PIB officials data
 def insert_pib_officials_data(data):

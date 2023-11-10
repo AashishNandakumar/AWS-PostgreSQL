@@ -3,6 +3,11 @@ from psycopg2.extras import execute_values  #? An helper function designed to in
 from pg_adaptor import connect
 
 
+'''
+#? To execute this particular file type in the terminal(from the project's root directory):
+-> python -m pg_adaptor.data_harvesters
+'''
+
 #! Insert website data here
 def insert_website_data(data):
     '''
@@ -26,8 +31,9 @@ def insert_website_data(data):
         #? A 'curosr' is a DB object used to retrieve, manipulate aand iterate through rows of a result set + also used to execute DB commands
         with conn.cursor() as cursor:  #? After this block, the 'cursor' resource will be closed automatically
             insert_query = """
-            INSERT INTO "Source".website (url, raw_content, language) VALUES %s;  #? '%s' is a place holder, will be replaced by a tuple(from our list of tuples during runtime)
+            INSERT INTO "Source".website (url, raw_content, language) VALUES %s;  
             """
+            #? '%s' is a place holder, will be replaced by a tuple(from our list of tuples during runtime)
             execute_values(cursor, insert_query, data)
         conn.commit()
     except psycopg2.DatabaseError as e:
@@ -128,6 +134,7 @@ print(f"PWD: {password}")
 print(get_all_data_from_table('\"Source\".video'))
 '''
 
+
 '''
 import datetime
 data = [
@@ -135,4 +142,13 @@ data = [
         ('http://youtube.com/video2', 'Transcript of the second video', datetime.datetime.now()),
     ]
 insert_video_data(data)
+'''
+
+
+'''
+data = [
+            ('http://example.com/article1', '<html>Content of article 1</html>', 'English'),
+            ('http://example.com/article2', '<html>Content of article 2</html>', 'Hindi'),
+        ]
+insert_website_data(data)
 '''
